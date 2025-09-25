@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Logic Playground</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <header class="app-header">
+        <h1>Interactive Logic Playground</h1>
+        <nav class="tabs">
+            <button class="tab-button active" data-target="#builder">Expression Builder</button>
+            <button class="tab-button" data-target="#venn">Venn Diagrams</button>
+            <button class="tab-button" data-target="#quantifiers">Quantifiers</button>
+        </nav>
+    </header>
+
+    <main class="app-main">
+        <section id="builder" class="tab-section active"></section>
+        <section id="venn" class="tab-section"></section>
+        <section id="quantifiers" class="tab-section"></section>
+    </main>
+
+    <footer class="app-footer">
+        <span>Built with HTML, CSS, and JavaScript (ES Modules). No build tools required.</span>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+<script>
+// Simple hash-based deep-link for tabs (optional)
+if (location.hash) {
+    const btn = document.querySelector(`.tab-button[data-target='${location.hash}']`);
+    if (btn) btn.click();
+}
+</script>
+</html>
+
